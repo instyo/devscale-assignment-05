@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply m-0 bg-white text-zinc-900 antialiased;
+}
+
+/* Composer textarea defaults from Anvia */
+[data-role="composer"] textarea,
+.composer-input {
+  field-sizing: content;
+  max-height: 200px;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@repo/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "contract:emit": "prisma contract emit",
+    "db:init": "prisma db init",
+    "db:update": "prisma db update",
+    "db:migrate": "prisma db migrate --advance-ref db",
+    "migration:plan": "prisma migration plan",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anvia/core": "^1.17.0",
+    "@anvia/memory-prisma": "^1.2.2",
+    "@prisma/orm-postgres": "8.0.0-rc.18",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "prisma": "8.0.0-rc.23",
+    "typescript": "^5.8.3"
+  }
+}

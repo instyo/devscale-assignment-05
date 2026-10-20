@@ -1,0 +1,30 @@
+{
+  "name": "devscale-assignment-05",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "dev:api": "pnpm --filter @repo/api dev",
+    "dev:web": "pnpm --filter @repo/web dev",
+    "build": "pnpm -r build",
+    "build:api": "pnpm --filter @repo/api build",
+    "build:web": "pnpm --filter @repo/web build",
+    "evals:1": "node --env-file=.env --import tsx packages/agents/src/evals/first-week.ts",
+    "evals:2": "node --env-file=.env --import tsx packages/agents/src/evals/first-month.ts",
+    "evals:3": "node --env-file=.env --import tsx packages/agents/src/evals/culture-and-norms.ts",
+    "evals:4": "node --env-file=.env --import tsx packages/agents/src/evals/contacts-and-safety.ts",
+    "evals": "pnpm evals:1 && pnpm evals:2 && pnpm evals:3 && pnpm evals:4",
+    "db:up": "docker compose -f docker-compose.dev.yml up -d",
+    "db:down": "docker compose -f docker-compose.dev.yml down",
+    "db:emit": "pnpm --filter @repo/db contract:emit",
+    "db:init": "pnpm --filter @repo/db db:init",
+    "db:update": "pnpm --filter @repo/db db:update"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@11.24.0"
+}
